@@ -2,7 +2,9 @@ use 5.18.2;
 use Modern::Perl;
 use Moops;
 
-class XML::Simple::Sugar 1.0.0 {
+our $VERSION = 1.0.1;
+
+class XML::Simple::Sugar {
     our $AUTOLOAD;
     use XML::Simple;
     use UNIVERSAL::isa;
@@ -297,7 +299,7 @@ XML::Simple::Sugar - Sugar sprinkled on XML::Simple
 
 =head1 VERSION
 
-version 1.0.0
+version 1.0.1
 
 =head1 SYNOPSIS
 
@@ -440,6 +442,7 @@ Additionally, this package depends on XML::Simple, which currently has a "do not
 Most of the automagic happens with AUTOLOAD.  Accessors/mutators and method names in this package cannot be used as element names in the XML document.  XML naming rules prohibit the use of elements starting with the string "xml", so I've used this string as a prefix to all accessors/mutators/methods to avoid potential conflicts with AUTOLOAD.  Sorry for the extra characters. :/ 
 
 =head1 REPOSITORY
+
 L<https://github.com/Camspi/XML-Simple-Sugar>
 
 =head1 SEE ALSO
