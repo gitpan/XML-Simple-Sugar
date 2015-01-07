@@ -2,7 +2,7 @@ use 5.18.2;
 use Modern::Perl;
 use Moops;
 
-class XML::Simple::Sugar 1.0.8 {
+class XML::Simple::Sugar 1.0.9 {
     our $AUTOLOAD;
     use XML::Simple;
     use UNIVERSAL::isa;
@@ -232,6 +232,7 @@ class XML::Simple::Sugar 1.0.8 {
                 } 0 .. scalar @{ $self->xml_data->{$node} } - 1;
             }
         }
+        return;
     }
     
     multi method xml_subnode (Str $node, Str $content) {
@@ -297,7 +298,7 @@ XML::Simple::Sugar - Sugar sprinkled on XML::Simple
 
 =head1 VERSION
 
-version v1.0.8
+version v1.0.9
 
 =head1 SYNOPSIS
 
